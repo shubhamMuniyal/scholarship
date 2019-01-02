@@ -16,16 +16,16 @@ contract Student{
     }
 
     struct scholarship {
-        bool gotScholarship;
+        string gotScholarship;
         string scholarshipDetails;
     }
 
     mapping(uint => student) public students;
     uint public stuCount;
 
-    function setStudentInfo(
+    function _setStudentInfo(
         string memory _name, uint SSC, uint HSC, uint aadhar, string memory dob, uint income, 
-        string memory education, string memory curYear, bool sGot, string memory sDetails) public{
+        string memory education, string memory curYear, string memory sGot, string memory sDetails) public{
 
         stuCount++;
         students[stuCount] = student(stuCount, _name, SSC, HSC, aadhar, dob, income, education, curYear, scholarship(sGot,sDetails));
@@ -68,7 +68,7 @@ contract Student{
         return students[i].currentYear;
     }
 
-    function getScholarship(uint i) public view returns(bool){
+    function getScholarship(uint i) public view returns(string memory){
         return students[i].stuScholarship.gotScholarship;
     }
 

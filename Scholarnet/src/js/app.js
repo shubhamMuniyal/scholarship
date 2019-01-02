@@ -47,7 +47,7 @@ App = {
     },
 
     setStudentInfo: function() {
-        App.contacts.Student.deployed().then((student)=>{
+        App.contracts.Student.deployed().then((student) =>{
             var name = $("#name").val();
             var ten = $("#ssc_per").val();
             var tw = $("#hsc_per").val();
@@ -58,9 +58,9 @@ App = {
             var yearedu = $("#year_edu").val();
             var sgot = $("#scholarship_got").val();
             var sd = $("#scholarship_info").val();
-            student.setStudentInfo(name,ten,tw,aadhar,dob,fi,edu,yearedu,sgot,sd);
+            student._setStudentInfo(name,ten,tw,aadhar,dob,fi,edu,yearedu,sgot,sd);
         });
-    }
+    },
 };
   
   
