@@ -38,11 +38,70 @@ App = {
 
     showStudentInfo: function() {
         App.contracts.Student.deployed().then((student) =>{
-            var aadhar = $("#aadharNo").val();
-            student.getStudentInfo(aadhar).then((result, error)=>{
+            var aadhaar = $("#aadhaarNo").val();
+            student.getName(aadhaar).then((result, error)=>{
                 console.log(result);
+                $("#details").append("Name:"+result+"<br>");
                 console.log(error);
             });
+
+            student.getId(aadhaar).then((result, error)=>{
+                console.log(result);
+                $("#details").append("ID:"+result+"<br>");
+                console.log(error);
+            });
+
+            student.getSSC(aadhaar).then((result, error)=>{
+                console.log(result);
+                $("#details").append("SSC percentage:"+result+"<br>");
+                console.log(error);
+            });
+
+            student.getHSC(aadhaar).then((result, error)=>{
+                console.log(result);
+                $("#details").append("HSC percentage:"+result+"<br>");
+                console.log(error);
+            });
+
+            student.getAadhaar(aadhaar).then((result, error)=>{
+                console.log(result);
+                $("#details").append("Aadhaar card number:"+result+"<br>");
+                console.log(error);
+            });
+
+            student.getDob(aadhaar).then((result, error)=>{
+                console.log(result);
+                $("#details").append("Date of birth:"+result+"<br>");
+                console.log(error);
+            });
+
+            student.getIncome(aadhaar).then((result, error)=>{
+                console.log(result);
+                $("#details").append("Family Income:"+result+"<br>");
+                console.log(error);
+            });
+
+            student.getEducation(aadhaar).then((result, error)=>{
+                console.log(result);
+                $("#details").append("Current Education:"+result+"<br>");
+                console.log(error);
+            });
+
+            student.getcurYear(aadhaar).then((result, error)=>{
+                console.log(result);
+                $("#details").append("Current education year:"+result+"<br>");
+                console.log(error);
+            });
+
+            student.getsDetails(aadhaar).then((result, error)=>{
+                console.log(result);
+                if(result = ""){
+                    result = "none";
+                }
+                $("#details").append("Other Scholarship details:"+result+"<br>");
+                console.log(error);
+            });
+
         });
     },
 
@@ -51,14 +110,25 @@ App = {
             var name = $("#name").val();
             var ten = $("#ssc_per").val();
             var tw = $("#hsc_per").val();
-            var aadhar = $("#aadhar").val();
+            var aadhaar = $("#aadhaar").val();
             var dob = $("#dob").val();
             var fi = $("#income").val();
             var edu = $("#edu").val();
             var yearedu = $("#year_edu").val();
-            var sgot = $("#scholarship_got").val();
+            //var sgot = $("#scholarship_got").val();
             var sd = $("#scholarship_info").val();
-            student._setStudentInfo(name,ten,tw,aadhar,dob,fi,edu,yearedu,sgot,sd);
+
+            $("#aadhaarValid").text("");
+            if(!(/^\d{4}\d{4}\d{4}$/.test(aadhaar))){
+
+                console.log("nope");
+                var aadhaarmsg = "Enter valid Aadhaar number";
+                $("#aadhaarValid").append(aadhaarmsg);
+            }
+            else{
+                $("#aadhaarValid").text("");
+                student._setStudentInfo(name,ten,tw,aadhaar,dob,fi,edu,yearedu,sd);
+            }
         });
     },
 };

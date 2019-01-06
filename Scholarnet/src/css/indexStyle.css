@@ -1,0 +1,32 @@
+input[type = "submit"] , input[type = "reset"]{
+    height : 30px;
+    width : 90px;
+    cursor: pointer; 
+    background-color: blue;
+    border-radius: 10px;
+    color: white;
+}
+
+input{
+    height : 20px;
+}
+
+fieldset{
+    position : relative;
+    width : 900px;
+    left : 200px;
+    right: 20px;
+}
+
+input{
+    width : 20%;
+}
+
+#formId{
+    width : 100%;
+}
+
+#aadhaarValid{
+    color : red;
+}
+
