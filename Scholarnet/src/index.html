@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel ="stylesheet" href = "css\indexStyle.css">
+</head>
+<body>
+
+<form id = "formId" align = "center" onSubmit="App.setStudentInfo(); return false;">
+  <h2 id="form_heading">New Registration</h2>
+  <fieldset align = "center">
+    <legend>Personal Details</legend>
+    <label>Applicant Name :</label><br>
+    <input type="text" id="name" > <br><br>
+    <label>Date of Birth :</label><br>
+    <input type="date" id="dob" placeholder="dd/mm/yyyy"> <br><br>
+  </fieldset>
+  <fieldset>
+    <legend>Educational Details</legend>
+    <label>10<sup>th</sup> Percentage :</label><br>
+    <input type="number" min = "0" max = "100" id="ssc_per" >  <br><br>
+    <label>12<sup>th</sup> Percentage :</label><br>
+    <input type="number" min = "0" max = "100" id="hsc_per" >  <br><br>
+    <label>Current Education pursuing :</label><br>
+    <input type="text" id="edu" >  <br><br>
+    <label>Current year of education :</label><br>
+    <input type="text" id="year_edu" >  <br><br>
+  </fieldset>
+  <fieldset >
+    <legend>Other Details</legend>
+    <label>Aadhaar Card Number :</label><br>
+    <input type="number" id="aadhaar" placeholder="Valid aadhaar card number" ><span id = "aadhaarValid"></span> <br><br>
+    <label>Father's Income per annum :</label><br>
+    <input type="number" id="income" placeholder="Enter income in figures"> <br><br>
+    <label>Name other Scholarships(if got any): </label><br>
+    <input type="text" id="scholarship_info" > <br><br>
+  </fieldset>
+  <input type="submit" id = "subForm" value="Submit">
+  <input type = "reset">
+</form> 
+<a href="studentRegisterDetails.html">Click here to view registered student details.</a>
+ <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+input[type = "submit"] , input[type = "reset"]{
+    height : 40px;
+    width : auto;
+    cursor: pointer; 
+    background-color: blue;
+    border-radius: 20px;
+    color: white;
+}
+fieldset{
+    position : relative;
+    width : 70%;
+    left : 15%;
+}
+legend{
+    color:grey;
+}
+input{
+    width : 30%;
+    height : 20px;
+}
+#formId{
+    width : 100%;
+}
+#aadhaarValid{
+    color : red;
+}
+#details{  
+    padding-top: 20px;
+    position : relative;
+    width : 70%;
+    left : 15%;
+    text-align: center;
+}
+.key{
+    color:grey;
+}
+.value{
+    background-color: whitesmoke;
+    color:goldenrod;
+}
+
