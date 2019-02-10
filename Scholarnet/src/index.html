@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<form id = "formId" align = "center" onSubmit="App.setStudentInfo(); return false;">
+<form id = "formId" align = "center" onSubmit="getDataFromJSON(); return false;">
   <h2 id="form_heading">New Registration</h2>
   <fieldset align = "center">
     <legend>Personal Details</legend>
@@ -27,10 +27,12 @@
   </fieldset>
   <fieldset >
     <legend>Other Details</legend>
-    <label>Aadhaar Card Number :</label><br>
+    <label>Student's Aadhaar Card Number :</label><br>
     <input type="number" id="aadhaar" placeholder="Valid aadhaar card number" ><span id = "aadhaarValid"></span> <br><br>
+    <label>Income certificate Number :</label><br>
+    <input type="text" id="certi_num" placeholder="Valid Income Certificate number" ><span id = "certiValidF"></span> <br><br>
     <label>Father's Income per annum :</label><br>
-    <input type="number" id="income" placeholder="Enter income in figures"> <br><br>
+    <input type="number" id="income" placeholder="Enter income in figures"><span id = "incomeValid"></span> <br><br>
     <label>Name other Scholarships(if got any): </label><br>
     <input type="text" id="scholarship_info" > <br><br>
   </fieldset>
@@ -45,5 +47,32 @@
     <script src="js/web3.min.js"></script>
     <script src="js/truffle-contract.js"></script>
     <script src="js/app.js"></script>
+    <script type="text/javascript" src="js/income.json"></script>
+    <script type="text/javascript">
+      function getDataFromJSON(){
+        console.log("Hi json");
+        var myObj = JSON.parse(data);
+        console.log(myObj);
+        var certi_num = $("#certi_num").val() ;
+        var valid_certi_num_flag = false ; 
+        for(var i=0; i<myObj.length; i++){
+          var original_certi_num = myObj[i].id ;
+          if(certi_num==original_certi_num){
+            console.log(myObj[i].income);
+            valid_certi_num_flag = true ;
+            $("#certiValidF").text(" ");
+            var actual_income = myObj[i].income ;
+            App.validateStudentInfo(actual_income);
+            break;
+          }
+        }
+        if(valid_certi_num_flag==false){
+          var msg = "<br>Enter valid Income certificate number";
+          $("#certiValidF").text("");
+          $("#certiValidF").append(msg);      
+        }
+      }
+    </script>
 </body>
 </html>
+

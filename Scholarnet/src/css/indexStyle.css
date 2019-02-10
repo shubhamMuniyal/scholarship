@@ -21,7 +21,7 @@ input{
 #formId{
     width : 100%;
 }
-#aadhaarValid{
+#aadhaarValid, #certiValidF, #incomeValid{
     color : red;
 }
 #details{  

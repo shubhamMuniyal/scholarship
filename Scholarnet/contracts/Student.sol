@@ -27,6 +27,15 @@ contract Student{
         
     }
 
+    function validateIncome(uint enterIncome, uint originalIncome) public pure returns(string memory){
+        if(enterIncome < originalIncome){  //check if user enters less income than original in order o get scholarship
+            return "invalid";
+        }
+        else{
+            return "valid";
+        }
+    }
+
     function getName(uint i) public view returns(string memory){
         return students[i].name;
     }

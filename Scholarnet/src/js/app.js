@@ -84,7 +84,7 @@ App = {
 
             student.getAadhaar(aadhaar).then((result, error)=>{
                 console.log(result);
-                $("#details").append("<div class='key'>Aadhaar card number:</div><div class='value'>"+result+"</div><br>");
+                $("#details").append("<div class='key'>Applicant's Aadhaar card number:</div><div class='value'>"+result+"</div><br>");
                 console.log(error);
             });
 
@@ -102,6 +102,31 @@ App = {
         }); 
     },
 
+    validateStudentInfo: function(s){
+        console.log("Validate");
+       // var num = $("#certi_num").val();  //father_adhaar is replaced by income certificate but naming conventions are not changed
+        var fi = $("#income").val(); //entered income
+        var original_income = s;   //retrieve income whoose income certificate number is equal to num
+        
+        App.contracts.Student.deployed().then((student)=>{
+            student.validateIncome(fi,original_income).then((result,error)=>{
+                console.log(result);
+                console.log(error);
+                if(error){
+                    console.log("error") ;
+                }
+                if(result=="valid"){
+                    $("#incomeValid").text("");
+                    App.setStudentInfo();
+                }
+                else if(result=="invalid"){
+                    $("#incomeValid").text("");
+                    $("#incomeValid").append("<br>Income entered does not matches with Income department logs.");
+                }
+            });
+        });
+    },
+
     setStudentInfo: function() {
         App.contracts.Student.deployed().then((student) =>{
             var name = $("#name").val();
@@ -114,16 +139,19 @@ App = {
             var yearedu = $("#year_edu").val();
             //var sgot = $("#scholarship_got").val();
             var sd = $("#scholarship_info").val();
-
+            var flag = "true";
             $("#aadhaarValid").text("");
             if(!(/^\d{4}\d{4}\d{4}$/.test(aadhaar))){
 
                 console.log("nope");
                 var aadhaarmsg = "<br>Enter valid Aadhaar number";
+                flag="false";
                 $("#aadhaarValid").append(aadhaarmsg);
             }
             else{
                 $("#aadhaarValid").text("");
+            }
+            if(flag=="true"){ //if all information entered in form are proper and gets validated.
                 student._setStudentInfo(name,ten,tw,aadhaar,dob,fi,edu,yearedu,sd);
             }
         });
