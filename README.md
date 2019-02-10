@@ -1,5 +1,5 @@
 ## ScholarNet
-###### The repository contains code for student registration and validation of income entered by student in the form with the actual income which is stored in JSON file(it is assumed as JSON file contains records of income department).
+###### The repository contains smart contract (written in Solidity and deployed on local Blockchain) and User Interface for student registration, validation of income entered by student during registration. Actual income is stored in JSON file (assumption: Records of income are from income department).
 ## Technologies used :
 - Blockchain
 - JavaScript
@@ -19,13 +19,11 @@ truffle.cmd develop
 ```
 ```
 truffle.cmd migrate 
-  OR
-truffle.cmd migrate --reset
 ```
 ```
 npm run dev
 ```
-2. Enter URL: [localhost:3000] into Web Browser.
+2. Enter URL: localhost:3000 into Web Browser.
 3. Import Account to Metamask. [Tutorial](https://medium.com/publicaio/how-import-a-wallet-to-your-metamask-account-dcaba25e558d)
 
 ## Important files
