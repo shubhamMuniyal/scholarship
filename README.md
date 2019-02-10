@@ -15,11 +15,9 @@ npm install -g truffle
 - Add [Metamask](https://chrome.google.com/webstore/search/metamask?hl=en) to Chrome.
 ## Steps to run project
 ###### Run below commands on separate command prompt
-1. Truffle develop
 ```
 truffle.cmd develop
 ```
-2. Truffle migrate
 ```
 truffle.cmd migrate 
 ```
@@ -27,14 +25,14 @@ truffle.cmd migrate
 ```
 truffle.cmd migrate --reset
 ```
-3.  
 ```
 npm run dev
 ```
 ###### Enter URL: [localhost:3000] into Web Browser.
-4. Import an account in Metamask.
-###### Done :+1
+###### Import Account to Metamask. [Tutorial](https://medium.com/publicaio/how-import-a-wallet-to-your-metamask-account-dcaba25e558d)
+
 ## Important files
+
 
 
 
