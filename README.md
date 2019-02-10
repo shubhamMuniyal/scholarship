@@ -20,7 +20,7 @@ truffle.cmd develop
 ```
 ```
 truffle.cmd migrate 
-###### OR
+  OR
 truffle.cmd migrate --reset
 ```
 ```
@@ -37,7 +37,7 @@ npm run dev
 5. [indexStyle.css](https://github.com/HarshitaAgrawal2/scholarship/blob/master/Scholarnet/src/css/indexStyle.css)
 
 ###### Contributors
-@shubhamMuniyal(https://github.com/shubhamMuniyal)
+@shubhamMuniyal(https://github.com/shubhamMuniyal) \
 @HarshitaAgrawal2(https://github.com/HarshitaAgrawal2)
 
 
