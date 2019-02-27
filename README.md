@@ -33,9 +33,6 @@ npm run dev
 4. [app.js](https://github.com/HarshitaAgrawal2/scholarship/blob/master/Scholarnet/src/js/app.js)
 5. [indexStyle.css](https://github.com/HarshitaAgrawal2/scholarship/blob/master/Scholarnet/src/css/indexStyle.css)
 
-###### Contributors
-[shubhamMuniyal](https://github.com/shubhamMuniyal) \
-[HarshitaAgrawal2](https://github.com/HarshitaAgrawal2)
 
 
 
